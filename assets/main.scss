@@ -37,6 +37,7 @@ header {
         border-radius: 8px;
         text-align: center;
         padding-top: 16px;
+
         h6 {
             font-family: $font;
             font-weight: 600;
@@ -46,6 +47,7 @@ header {
             color: #2A45C2;
             margin: auto;
         }
+
         span {
             font-family: $font;
             font-weight: 700;
@@ -65,19 +67,56 @@ header {
     margin-top: 64px;
     max-width: 476px;
     height: 430px;
+
     .row {
         justify-content: space-evenly;
         gap: 80px;
+        position: relative;
     }
+
     .bottom-row {
         margin-top: 24px;
     }
+
+    .col-before {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        max-width: 198px;
+        max-height: 194px;
+        height: 100%;
+        opacity: 0;
+        border-radius: 100%;
+        border: solid 90px #fff;
+        animation-name: wave-leave;
+        animation-duration: 0.5s;
+    }
+
+    .paper-before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .scissors-before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .rock-before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     .col {
         width: 198px;
         height: 194px;
         border-radius: 100%;
         position: relative;
         background-color: #fff;
+
         img {
             position: absolute;
             top: 50%;
@@ -86,23 +125,76 @@ header {
             width: 64px;
         }
     }
+
     .scissors {
         border: solid 23px #EB9F0E;
         box-shadow: 0px 5px 0px 3px #C76C1B, inset 0px 6px 3px 1px #babfd4;
+
+        &:hover {
+            cursor: pointer;
+
+            .scissors-before {
+                animation-name: wave-hover;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+            }
+        }
     }
 
     .rock {
         border: solid 23px #DB2E4D;
         box-shadow: 0px 5px 0px 3px #9D1634, inset 0px 6px 3px 1px #babfd4;
+
+        &:hover {
+            cursor: pointer;
+
+            .rock-before {
+                animation-name: wave-hover;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+            }
+        }
     }
 
     .paper {
         border: solid 23px #4664F4;
         box-shadow: 0px 5px 0px 3px #2a45c2, inset 0px 6px 3px 1px #babfd4;
+
+        &:hover {
+            cursor: pointer;
+
+            .paper-before {
+                animation-name: wave-hover;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+            }
+        }
     }
 }
 
+@keyframes wave-hover {
+    from {
+        opacity: 0;
+        border-width: 90px;
+    }
 
+    to {
+        opacity: 0.1;
+        border-width: 140px;
+    }
+}
+
+@keyframes wave-leave {
+    from {
+        opacity: 0.1;
+        border-width: 140px;
+    }
+
+    to {
+        opacity: 0;
+        border-width: 90px;
+    }
+}
 
 
 
@@ -135,8 +227,9 @@ header {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
+    color: #fff;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: hsl(202, 68%, 77%);
 }

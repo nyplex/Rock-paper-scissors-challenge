@@ -60,9 +60,38 @@ header .score-container span {
 .start-game .row {
   justify-content: space-evenly;
   gap: 80px;
+  position: relative;
 }
 .start-game .bottom-row {
   margin-top: 24px;
+}
+.start-game .col-before {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  max-width: 198px;
+  max-height: 194px;
+  height: 100%;
+  opacity: 0;
+  border-radius: 100%;
+  border: solid 90px #fff;
+  animation-name: wave-leave;
+  animation-duration: 0.5s;
+}
+.start-game .paper-before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.start-game .scissors-before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.start-game .rock-before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .start-game .col {
   width: 198px;
@@ -82,15 +111,59 @@ header .score-container span {
   border: solid 23px #EB9F0E;
   box-shadow: 0px 5px 0px 3px #C76C1B, inset 0px 6px 3px 1px #babfd4;
 }
+.start-game .scissors:hover {
+  cursor: pointer;
+}
+.start-game .scissors:hover .scissors-before {
+  animation-name: wave-hover;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
 .start-game .rock {
   border: solid 23px #DB2E4D;
   box-shadow: 0px 5px 0px 3px #9D1634, inset 0px 6px 3px 1px #babfd4;
+}
+.start-game .rock:hover {
+  cursor: pointer;
+}
+.start-game .rock:hover .rock-before {
+  animation-name: wave-hover;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
 .start-game .paper {
   border: solid 23px #4664F4;
   box-shadow: 0px 5px 0px 3px #2a45c2, inset 0px 6px 3px 1px #babfd4;
 }
+.start-game .paper:hover {
+  cursor: pointer;
+}
+.start-game .paper:hover .paper-before {
+  animation-name: wave-hover;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
 
+@keyframes wave-hover {
+  from {
+    opacity: 0;
+    border-width: 90px;
+  }
+  to {
+    opacity: 0.1;
+    border-width: 140px;
+  }
+}
+@keyframes wave-leave {
+  from {
+    opacity: 0.1;
+    border-width: 140px;
+  }
+  to {
+    opacity: 0;
+    border-width: 90px;
+  }
+}
 .attribution {
   font-size: 14px;
   text-align: center;
@@ -98,10 +171,11 @@ header .score-container span {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
+  color: #fff;
 }
 
 .attribution a {
-  color: #3e52a3;
+  color: #9ccfec;
 }
 
 /*# sourceMappingURL=style.css.map */
