@@ -48,9 +48,47 @@ header .score-container span {
   color: #565468;
 }
 
-.include {
-  color: #fff;
-  font-size: 25px;
+.start-game {
+  background-image: url("images/bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  margin-top: 64px;
+  max-width: 476px;
+  height: 430px;
+}
+.start-game .row {
+  justify-content: space-evenly;
+  gap: 80px;
+}
+.start-game .bottom-row {
+  margin-top: 24px;
+}
+.start-game .col {
+  width: 198px;
+  height: 194px;
+  border-radius: 100%;
+  position: relative;
+  background-color: #fff;
+}
+.start-game .col img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+}
+.start-game .scissors {
+  border: solid 23px #EB9F0E;
+  box-shadow: 0px 5px 0px 3px #C76C1B, inset 0px 6px 3px 1px #babfd4;
+}
+.start-game .rock {
+  border: solid 23px #DB2E4D;
+  box-shadow: 0px 5px 0px 3px #9D1634, inset 0px 6px 3px 1px #babfd4;
+}
+.start-game .paper {
+  border: solid 23px #4664F4;
+  box-shadow: 0px 5px 0px 3px #2a45c2, inset 0px 6px 3px 1px #babfd4;
 }
 
 .attribution {
