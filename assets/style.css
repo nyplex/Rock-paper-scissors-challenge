@@ -167,10 +167,8 @@ header .score-container span {
 .attribution {
   font-size: 14px;
   text-align: center;
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  margin-top: 100px;
   color: #fff;
 }
 
