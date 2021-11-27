@@ -58,7 +58,7 @@ header .score-container span {
   height: 430px;
 }
 .start-game .row {
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: 80px;
   position: relative;
 }
@@ -93,52 +93,56 @@ header .score-container span {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.start-game .col {
+
+.symbol {
   width: 198px;
   height: 194px;
   border-radius: 100%;
   position: relative;
   background-color: #fff;
 }
-.start-game .col img {
+.symbol img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 64px;
 }
-.start-game .scissors {
+
+.scissors {
   border: solid 30px #EB9F0E;
   box-shadow: 0px 5px 0px 3px #C76C1B, inset 0px 6px 3px 1px #babfd4;
 }
-.start-game .scissors:hover {
+.scissors:hover {
   cursor: pointer;
 }
-.start-game .scissors:hover .scissors-before {
+.scissors:hover .scissors-before {
   animation-name: wave-hover;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
-.start-game .rock {
+
+.rock {
   border: solid 30px #DB2E4D;
   box-shadow: 0px 5px 0px 3px #9D1634, inset 0px 6px 3px 1px #babfd4;
 }
-.start-game .rock:hover {
+.rock:hover {
   cursor: pointer;
 }
-.start-game .rock:hover .rock-before {
+.rock:hover .rock-before {
   animation-name: wave-hover;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
-.start-game .paper {
+
+.paper {
   border: solid 30px #4664F4;
   box-shadow: 0px 5px 0px 3px #2a45c2, inset 0px 6px 3px 1px #babfd4;
 }
-.start-game .paper:hover {
+.paper:hover {
   cursor: pointer;
 }
-.start-game .paper:hover .paper-before {
+.paper:hover .paper-before {
   animation-name: wave-hover;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
@@ -164,6 +168,29 @@ header .score-container span {
     border-width: 90px;
   }
 }
+.step-two {
+  max-width: 658px !important;
+  margin: auto;
+  margin-top: 72px;
+}
+.step-two .row {
+  justify-content: space-around;
+}
+.step-two h3 {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 63px;
+}
+
+.empty-symbol {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 .attribution {
   font-size: 14px;
   text-align: center;
