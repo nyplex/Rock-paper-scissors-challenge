@@ -176,7 +176,7 @@ header .score-container span {
   max-width: 858px !important;
   margin: auto;
   margin-top: 180px;
-  margin-bottom: 350px;
+  margin-bottom: 250px;
 }
 .step-two .row {
   justify-content: space-around;
@@ -221,6 +221,62 @@ header .score-container span {
 
 .step-two-symbol:hover {
   cursor: default !important;
+}
+
+.game-result-container {
+  text-align: center;
+}
+.game-result-container h4 {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 67.2px;
+  color: #fff;
+}
+.game-result-container button {
+  width: 220px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(0deg, #F3F3F3 0%, #FFFFFF 100%);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.196706);
+  margin-top: 16px;
+  color: #3B4262;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: 2.5px;
+}
+.game-result-container button:hover {
+  color: #DB2E4D;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+footer .btn {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: 2.5px;
+  text-align: center;
+  width: 128px;
+  height: 40px;
+  background: transparent;
+  border: solid 2px #fff;
+  border-radius: 7px;
+  color: #fff;
+  margin-left: auto;
+  display: block;
+  margin-right: 200px;
+  margin-bottom: 30px;
+}
+footer .btn:hover {
+  color: #DB2E4D;
 }
 
 .attribution {

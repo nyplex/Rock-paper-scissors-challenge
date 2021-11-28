@@ -208,7 +208,8 @@ header {
     max-width: 858px !important;
     margin: auto;
     margin-top: 180px;
-    margin-bottom: 350px;
+    margin-bottom: 250px;
+
     .row {
         justify-content: space-around;
         position: relative;
@@ -258,10 +259,66 @@ header {
     }
 }
 
+.game-result-container {
+    text-align: center;
 
+    h4 {
+        font-family: $font;
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 67.2px;
+        color: #fff;
+    }
 
+    button {
+        width: 220px;
+        height: 48px;
+        border-radius: 8px;
+        border: none;
+        background: linear-gradient(0deg, #F3F3F3 0%, #FFFFFF 100%);
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.196706);
+        margin-top: 16px;
+        color: #3B4262;
+        font-family: $font;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19.2px;
+        letter-spacing: 2.5px;
 
+        &:hover {
+            color: #DB2E4D;
+            cursor: pointer;
+        }
+    }
+}
 
+footer {
+    display: flex;
+    flex-direction: column;
+
+    .btn {
+        font-family: $font;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19.2px;
+        letter-spacing: 2.5px;
+        text-align: center;
+        width: 128px;
+        height: 40px;
+        background: transparent;
+        border: solid 2px #fff;
+        border-radius: 7px;
+        color: #fff;
+        margin-left: auto;
+        display: block;
+        margin-right: 200px;
+        margin-bottom: 30px;
+
+        &:hover {
+            color: #DB2E4D;
+        }
+    }
+}
 
 
 
