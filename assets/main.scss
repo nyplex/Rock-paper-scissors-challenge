@@ -225,6 +225,11 @@ header {
     background: rgba(0, 0, 0, 0.1);
 }
 
+.step-two-symbol {
+    &:hover {
+        cursor: default !important;
+    }
+}
 
 
 

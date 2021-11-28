@@ -191,6 +191,10 @@ header .score-container span {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.step-two-symbol:hover {
+  cursor: default !important;
+}
+
 .attribution {
   font-size: 14px;
   text-align: center;
