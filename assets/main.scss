@@ -10,6 +10,9 @@ body {
     padding: 0;
 }
 
+.fit-content {
+    width: fit-content;
+}
 
 //Game's Symbols
 
@@ -202,11 +205,13 @@ header {
 
 //Step 2 - User made the choice
 .step-two {
-    max-width: 658px !important;
+    max-width: 858px !important;
     margin: auto;
-    margin-top: 72px;
+    margin-top: 180px;
+    margin-bottom: 350px;
     .row {
         justify-content: space-around;
+        position: relative;
     }
 
     h3 {
@@ -218,7 +223,29 @@ header {
         color: #fff;
         text-align: center;
         margin-bottom: 63px;
+        position: absolute;
+        top: -115px;
     }
+}
+
+.step-two-left {
+    position: absolute;
+    left: 150px;
+    transition: all 3s;
+}
+
+.step-two-left-open {
+    left: 0px !important;
+}
+
+.step-two-right {
+    position: absolute;
+    right: 150px;
+    transition: all 3s;
+}
+
+.step-two-right-open {
+    right: 0px;
 }
 
 .empty-symbol {
@@ -230,8 +257,6 @@ header {
         cursor: default !important;
     }
 }
-
-
 
 
 

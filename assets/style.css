@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+.fit-content {
+  width: fit-content;
+}
+
 header {
   border: 3px solid rgba(255, 255, 255, 0.289199);
   margin-top: 48px;
@@ -169,12 +173,14 @@ header .score-container span {
   }
 }
 .step-two {
-  max-width: 658px !important;
+  max-width: 858px !important;
   margin: auto;
-  margin-top: 72px;
+  margin-top: 180px;
+  margin-bottom: 350px;
 }
 .step-two .row {
   justify-content: space-around;
+  position: relative;
 }
 .step-two h3 {
   font-family: "Barlow Semi Condensed", sans-serif;
@@ -185,6 +191,28 @@ header .score-container span {
   color: #fff;
   text-align: center;
   margin-bottom: 63px;
+  position: absolute;
+  top: -115px;
+}
+
+.step-two-left {
+  position: absolute;
+  left: 150px;
+  transition: all 3s;
+}
+
+.step-two-left-open {
+  left: 0px !important;
+}
+
+.step-two-right {
+  position: absolute;
+  right: 150px;
+  transition: all 3s;
+}
+
+.step-two-right-open {
+  right: 0px;
 }
 
 .empty-symbol {
