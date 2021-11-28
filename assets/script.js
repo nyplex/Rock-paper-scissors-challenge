@@ -10,6 +10,8 @@ let getUserPick = () => {
   })
 }
 
+//get House Pick function
+
 let displayNot = (id) => document.getElementById(id).classList.add("display-not")
 let display = (id) => document.getElementById(id).classList.remove("display-not")
 
@@ -25,7 +27,6 @@ let displayHousePick = (symbol) => {
   document.getElementById("housePickContainer").classList.remove("empty-symbol")
   document.getElementById("housePickContainer").classList.add(symbol)
   document.getElementById("HousePickSymbol").src = `assets/images/icon-${symbol}.svg`
-
 }
 
 let countdown = (count) => {

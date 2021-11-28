@@ -253,6 +253,7 @@ header .score-container span {
 
 .empty-symbol {
   background: rgba(0, 0, 0, 0.1);
+  border: solid 30px transparent;
 }
 
 .step-two-symbol:hover {
