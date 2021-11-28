@@ -47,8 +47,47 @@
   </header>
 
   <main>
-    <div class="include" id="step-one" w3-include-html="step-one.html"></div>
-    <div class="include display-not" id="step-two" w3-include-html="step-two.html"></div>
+    <div class="include" id="step-one">
+      <div class="container start-game">
+        <div class="row">
+          <div class="col col-6 paper symbol" id="paper">
+            <img src="assets/images/icon-paper.svg" alt="Paper Illustration">
+            <div class="col-before paper-before"></div>
+          </div>
+          <div class="col col-6 scissors symbol" id="scissors">
+            <img src="assets/images/icon-scissors.svg" alt="Scissors Illustration">
+            <div class="col-before scissors-before"></div>
+          </div>
+
+        </div>
+        <div class="row bottom-row">
+          <div class="col col-12 rock symbol" id="rock">
+            <img src="assets/images/icon-rock.svg" alt="Rock Illustration">
+            <div class="col-before rock-before"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="include display-not" id="step-two">
+      <div class="container step-two p-0">
+        <div class="row flexible-row">
+          <div class="col col-6 symbol p-0 step-two-symbol step-two-left" id="userPickContainer">
+            <h3>YOU PICKED</h3>
+            <img src="assets/images/icon-paper.svg" alt="Paper Illustration" id="userPickSymbol">
+          </div>
+          <div class="game-result-container display-not">
+            <h4>YOU WON</h4>
+            <button>PLAY AGAIN</button>
+          </div>
+          <div class="col col-6 symbol p-0 empty-symbol step-two-symbol step-two-right" id="housePickContainer">
+            <h3>THE HOUSE PICKED</h3>
+            <img src="assets/images/icon-paper.svg" alt="Paper Illustration" id="HousePickSymbol" class="display-not">
+            <h6 id="countdown"></h6>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
     <button class="btn" data-bs-toggle="modal" data-bs-target="#rules-modal">RULES</button>
@@ -59,9 +98,6 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
   <script src="assets/script.js"></script>
-  <script>
-    includeHTML();
-  </script>
 </body>
 
 </html>
