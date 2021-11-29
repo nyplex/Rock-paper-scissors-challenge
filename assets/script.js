@@ -1,9 +1,8 @@
 let UserPick;
 let symbols = ['rock', 'paper', 'scissors'];
 let HousePick = symbols[Math.floor(Math.random() * symbols.length)]
-let score;
 
-document.getElementById("scoreSpan").innerHTML = localStorage.getItem("score");
+
 
 document.getElementById("reset-button").addEventListener("click", () => {
   localStorage.setItem("score", 0);
@@ -13,6 +12,9 @@ document.getElementById("reset-button").addEventListener("click", () => {
 document.getElementById("play-again-button").addEventListener("click", () => location.reload())
 
 let getUserPick = () => {
+  if(localStorage.getItem("score")) {
+    document.getElementById("scoreSpan").innerHTML = localStorage.getItem("score");
+  }
   document.querySelectorAll('.symbol').forEach(symbol => {
     symbol.addEventListener('click', (e) => {
       UserPick = e.path[1].id
@@ -48,12 +50,16 @@ let whoWin = (userPick, housePick) => {
 }
 
 let IncreaseScore = (status) => {
-  if(score === undefined) score = 0;
+  let currentScore = 0
+  if(localStorage.getItem("score")) {
+    currentScore = parseInt(localStorage.getItem("score"))
+  }else{
+    currentScore = 0
+  }
   if(status == "win") {
-    score = parseInt(localStorage.getItem("score")) + 1;
-    localStorage.setItem("score", score);
+    localStorage.setItem("score", currentScore + 1)
   }else {
-    score = parseInt(localStorage.getItem("score"))
+    localStorage.setItem("score", currentScore)
   }
   
 }
