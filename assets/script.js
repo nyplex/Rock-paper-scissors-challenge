@@ -52,9 +52,8 @@ let IncreaseScore = (status) => {
   if(status == "win") {
     score = parseInt(localStorage.getItem("score")) + 1;
     localStorage.setItem("score", score);
-    console.log("you win, score is: " + score);
   }else {
-    score = localStorage.getItem("score")
+    score = parseInt(localStorage.getItem("score"))
   }
   
 }
