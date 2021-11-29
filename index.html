@@ -29,7 +29,6 @@
   </div>
 
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Alex Nypels</a>.
   </div>
   <header class="container">
@@ -40,7 +39,7 @@
       <div class="col col-6 p-0">
         <div class="score-container">
           <h6>SCORE</h6>
-          <span>12</span>
+          <span id="scoreSpan">0</span>
         </div>
       </div>
     </div>
@@ -76,8 +75,8 @@
             <h3>YOU PICKED</h3>
             <img src="assets/images/icon-paper.svg" alt="Paper Illustration" id="userPickSymbol">
           </div>
-          <div class="game-result-container display-not">
-            <h4>YOU WON</h4>
+          <div class="game-result-container display-not" id="whoWonContainer">
+            <h4 id="whoWon">YOU WON</h4>
             <button>PLAY AGAIN</button>
           </div>
           <div class="col col-6 symbol p-0 empty-symbol step-two-symbol step-two-right" id="housePickContainer">

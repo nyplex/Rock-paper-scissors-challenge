@@ -274,7 +274,10 @@ header .score-container span {
 
 .game-result-container {
   text-align: center;
-  opacity: 1;
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
 }
 .game-result-container h4 {
   font-family: "Barlow Semi Condensed", sans-serif;
@@ -303,6 +306,20 @@ header .score-container span {
   cursor: pointer;
 }
 
+@keyframes whoWon {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 footer {
   display: flex;
   flex-direction: column;

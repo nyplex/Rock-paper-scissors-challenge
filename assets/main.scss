@@ -160,6 +160,7 @@ header {
     position: relative;
     background-color: #fff;
     z-index: 1;
+
     img {
         position: absolute;
         top: 50%;
@@ -310,8 +311,10 @@ header {
 
 .game-result-container {
     text-align: center;
-    opacity: 1;
-
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
     h4 {
         font-family: $font;
         font-weight: 700;
@@ -339,6 +342,21 @@ header {
             color: #DB2E4D;
             cursor: pointer;
         }
+    }
+}
+
+@keyframes whoWon {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
