@@ -1,9 +1,16 @@
 let UserPick;
 let symbols = ['rock', 'paper', 'scissors'];
 let HousePick = symbols[Math.floor(Math.random() * symbols.length)]
-let score = 0;
+let score;
 
+document.getElementById("scoreSpan").innerHTML = localStorage.getItem("score");
 
+document.getElementById("reset-button").addEventListener("click", () => {
+  localStorage.setItem("score", 0);
+  location.reload();
+})
+
+document.getElementById("play-again-button").addEventListener("click", () => location.reload())
 
 let getUserPick = () => {
   document.querySelectorAll('.symbol').forEach(symbol => {
@@ -30,18 +37,6 @@ let displayHousePick = () => {
   document.getElementById("HousePickSymbol").src = `assets/images/icon-${HousePick}.svg`
 }
 
-let countdown = (count) => {
-  let timeleft = count
-  setInterval(() => {
-    if(timeleft < 0) {
-      clearInterval(countdown)
-    }else{
-      document.getElementById("countdown").innerHTML = timeleft
-      timeleft -= 1
-    }
-  }, 700)
-}
-
 let whoWin = (userPick, housePick) => {
   if(userPick == housePick) return "equal"
   else if(userPick == "paper" && housePick == "rock") return "win"
@@ -53,8 +48,15 @@ let whoWin = (userPick, housePick) => {
 }
 
 let IncreaseScore = (status) => {
-  if(status == "win") score += 1
-  return score
+  if(score === undefined) score = 0;
+  if(status == "win") {
+    score = parseInt(localStorage.getItem("score")) + 1;
+    localStorage.setItem("score", score);
+    console.log("you win, score is: " + score);
+  }else {
+    score = localStorage.getItem("score")
+  }
+  
 }
 
 let DisplayWhoWin = () => {
@@ -70,11 +72,11 @@ let DisplayWhoWin = () => {
     document.getElementById("userPickContainer").classList.add("step-two-left-open")
     document.getElementById("housePickContainer").classList.add("step-two-right-open")
     document.getElementById("whoWonContainer").classList.remove("display-not")
-  }, 4000);
+  }, 1000);
   setTimeout(() => {
     document.getElementById("whoWonContainer").style.animationName = "whoWon"
-    document.getElementById("scoreSpan").innerHTML = score
-  }, 4100);
+    document.getElementById("scoreSpan").innerHTML = localStorage.getItem("score");
+  }, 1100);
 }
 
 
@@ -82,10 +84,9 @@ let startGame = (symbol) => {
   displayNot("step-one")
   display("step-two")
   displayUserPick(symbol)
-  countdown(3)
   setTimeout(() => {
     displayHousePick()
-  }, 3300);
+  }, 500);
   DisplayWhoWin()
 
 
