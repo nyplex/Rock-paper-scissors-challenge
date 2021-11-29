@@ -1,6 +1,7 @@
 let UserPick;
 let HousePick;
 
+
 let getUserPick = () => {
   document.querySelectorAll('.symbol').forEach(symbol => {
     symbol.addEventListener('click', (e) => {
@@ -11,6 +12,13 @@ let getUserPick = () => {
 }
 
 //get House Pick function
+let getHousePick = () => {
+  let symbols = ['rock', 'paper', 'scissors']
+  let symbol = arr => arr[Math.floor(Math.random() * arr.length)];
+  let HousePick = symbol(symbols)
+  return HousePick
+  
+}
 
 let displayNot = (id) => document.getElementById(id).classList.add("display-not")
 let display = (id) => document.getElementById(id).classList.remove("display-not")
@@ -20,8 +28,8 @@ let displayUserPick = (symbol) => {
   document.getElementById("userPickContainer").classList.add(symbol)
 }
 
-let displayHousePick = (symbol) => {
-  symbol = "rock"
+let displayHousePick = () => {
+  symbol = getHousePick()
   displayNot("countdown")
   display("HousePickSymbol")
   document.getElementById("housePickContainer").classList.remove("empty-symbol")
@@ -53,6 +61,9 @@ let startGame = (symbol) => {
   setTimeout(() => {
     displayHousePick()
   }, 3300);
+
+  console.log("user: " + symbol)
+  console.log("house: " + getHousePick(symbol));
 
   
 }
